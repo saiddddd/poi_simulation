@@ -78,6 +78,15 @@ if uploaded_csv and uploaded_tab_files:
             final_gdf = final_gdf.to_crs(epsg=4326)
             final_gdf['buffer_wgs84'] = final_gdf['buffer'].to_crs(epsg=4326)
 
+            total_site_id = final_gdf['site_id'].nunique()
+            p1_count = final_gdf[final_gdf['poi_final'] == 'P1']['site_id'].nunique()
+            p2_count = final_gdf[final_gdf['poi_final'] == 'P2']['site_id'].nunique()
+
+            st.markdown(f"### Statistik POI Final")
+            st.markdown(f"- Total **site_id**: {total_site_id}")
+            st.markdown(f"- Total **site_id** kategori **P1**: {p1_count}")
+            st.markdown(f"- Total **site_id** kategori **P2**: {p2_count}")
+
             m = folium.Map(location=[-6.22, 106.815], zoom_start=14)
 
             color_map = {'P1': 'red', 'P2': 'blue'}
