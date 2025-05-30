@@ -8,7 +8,10 @@ charset-normalizer==3.4.2
 click==8.2.1
 colorama==0.4.6
 folium==0.19.6
-geopandas==0.14.3
+geopandas==0.13.2
+fiona==1.9.5
+shapely==2.0.3
+pyproj==3.6.1
 gitdb==4.0.12
 GitPython==3.1.44
 idna==3.10
